@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Button, buttonVariants } from "@/components/ui/button"
 import { Download, Mail } from "lucide-react"
@@ -43,7 +44,7 @@ export function HeroSection() {
           className="mb-8"
         >
           <motion.div
-            className="w-48 h-48 md:w-64 md:h-64 mx-auto mb-6 bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 rounded-full flex items-center justify-center text-white text-6xl md:text-8xl font-bold shadow-2xl"
+            className="w-48 h-48 md:w-64 md:h-64 mx-auto mb-6 rounded-full p-[3px] bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 shadow-2xl"
             whileHover={{
               scale: 1.1,
               rotate: 5,
@@ -51,9 +52,16 @@ export function HeroSection() {
             }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
-              DS
-            </motion.span>
+            <div className="w-full h-full rounded-full overflow-hidden bg-background">
+              <Image
+                src="/profile.png"
+                alt="Diwas Sapkota"
+                width={256}
+                height={256}
+                className="object-cover object-top w-full h-full"
+                priority
+              />
+            </div>
           </motion.div>
         </motion.div>
 
@@ -86,7 +94,7 @@ export function HeroSection() {
           </motion.div>
 
           <motion.div {...scaleOnHover}>
-            <Link href="#contact" className={cn(buttonVariants({variant:"outline",size:"lg"}),"group flex items-center")}>
+            <Link href="#contact" className={cn(buttonVariants({ variant: "outline", size: "lg" }), "group flex items-center")}>
               <Mail className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform" />
               Get In Touch
             </Link>

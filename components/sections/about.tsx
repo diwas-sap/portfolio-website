@@ -46,12 +46,12 @@ export function AboutSection() {
               />
               <CardContent className="p-8 relative z-10">
                 <motion.p {...fadeInLeft} className="text-lg leading-relaxed mb-6">
-                  I'm a dedicated fourth-year Civil Engineering student with a passion for integrating technology into
+                  I&apos;m a dedicated fourth-year Civil Engineering student with a passion for integrating technology into
                   traditional engineering practices. My journey combines structural analysis, computational modeling,
                   and software development to solve complex engineering challenges.
                 </motion.p>
                 <motion.p {...fadeInRight} transition={{ delay: 0.2 }} className="text-lg leading-relaxed">
-                  Beyond academics, I'm actively involved in campus leadership and community building, serving as
+                  Beyond academics, I&apos;m actively involved in campus leadership and community building, serving as
                   Secretary of the Free Student Union and being an active member of the Math and Physics Society for
                   over three years.
                 </motion.p>
@@ -63,3 +63,4 @@ export function AboutSection() {
     </section>
   )
 }
+
