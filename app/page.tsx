@@ -1,25 +1,11 @@
-"use client"
-
-import { Navbar } from "@/components/sections/navbar"
 import { HeroSection } from "@/components/sections/hero"
 import { AboutSection } from "@/components/sections/about"
-import { SkillsSection } from "@/components/sections/skills"
-import { ExperienceSection } from "@/components/sections/experience"
-import { ProjectsSection } from "@/components/sections/projects"
-import { Footer } from "@/components/sections/footer"
-import { ContactSection } from "@/components/sections/contact"
 
 export default function Home() {
   return (
-    <div className="min-h-screen max-w-screen bg-background text-foreground">
-      <Navbar />
+    <div className="mx-auto grid max-w-[1500px] box-border items-stretch gap-4 px-3 py-3 lg:min-h-[calc(100svh-4rem)] lg:grid-cols-[minmax(17rem,0.85fr)_minmax(0,1.65fr)]">
       <HeroSection />
       <AboutSection />
-      <SkillsSection />
-      <ExperienceSection />
-      <ProjectsSection />
-      <ContactSection/>
-      <Footer />
     </div>
   )
 }

@@ -5,18 +5,27 @@ import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
+import Link from "next/link"
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  const navItems = ["About", "Skills", "Experience", "Projects", "Education", "Contact"]
+  const navItems = [
+    { label: "About", href: "/" },
+    { label: "Education", href: "/education" },
+    { label: "Research & Projects", href: "/research-projects" },
+    { label: "Skills", href: "/skills" },
+    { label: "Professional Engagement & Leadership", href: "/leadership" },
+    { label: "Awards & Honors", href: "/awards" },
+    { label: "Contact", href: "/contact" },
+  ]
 
   return (
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b z-50"
+      className="sticky top-0 w-full bg-background/80 backdrop-blur-md border-b z-50"
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <motion.h1 className="text-xl font-bold" whileHover={{ scale: 1.05 }}>
@@ -26,15 +35,18 @@ export function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
           {navItems.map((item) => (
-            <motion.a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+            <motion.div
+              key={item.label}
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              {item}
-            </motion.a>
+              <Link
+                href={item.href}
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {item.label}
+              </Link>
+            </motion.div>
           ))}
           <ThemeToggle />
         </div>
@@ -62,15 +74,18 @@ export function Navbar() {
       >
         <div className="container mx-auto px-4 py-4 space-y-2">
           {navItems.map((item) => (
-            <motion.a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="block py-2 text-muted-foreground hover:text-foreground transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
+            <motion.div
+              key={item.label}
               whileHover={{ x: 10 }}
             >
-              {item}
-            </motion.a>
+              <Link
+                href={item.href}
+                className="block py-2 text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            </motion.div>
           ))}
         </div>
       </motion.div>

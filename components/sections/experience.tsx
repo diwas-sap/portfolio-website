@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Users, GraduationCap } from "lucide-react"
+import { GraduationCap } from "lucide-react"
 
 const fadeInLeft = {
   initial: { opacity: 0, x: -60 },
@@ -27,7 +27,7 @@ const staggerContainer = {
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="py-16 px-4 bg-muted/30">
+    <section id="leadership" className="py-16 px-4 bg-muted/30">
       <div className="container mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
@@ -35,7 +35,7 @@ export function ExperienceSection() {
           viewport={{ once: true }}
           className="text-3xl font-bold text-center mb-12"
         >
-          Leadership & Experience
+          Leadership
         </motion.h2>
 
         <motion.div
@@ -62,10 +62,12 @@ export function ExperienceSection() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-between">
                     <span className="flex items-center">
-                      <motion.div whileHover={{ rotate: 360 }} transition={{ duration: 0.5 }}>
-                        <Users className="mr-2 h-5 w-5" />
-                      </motion.div>
-                      Secretary - Free Student Union
+                      <img
+                        src="/fsu-logo.png"
+                        alt="Free Students' Union logo"
+                        className="mr-3 h-12 w-12 shrink-0 rounded-md object-contain"
+                      />
+                      Secretary - Free Students&apos; Union
                     </span>
                     <motion.div whileHover={{ scale: 1.1 }}>
                       <Badge variant="outline">Current</Badge>
@@ -78,6 +80,11 @@ export function ExperienceSection() {
                     Leading student initiatives and representing student interests in campus governance. Organizing events,
                     managing communications, and facilitating dialogue between students and administration.
                   </p>
+                  <img
+                    src="/fsu-secretary-photo.jpg"
+                    alt="Diwas Sapkota at the Pulchowk Campus dean's office"
+                    className="mx-auto mt-5 max-h-[28rem] w-full rounded-lg object-contain object-center sm:max-w-sm"
+                  />
                 </CardContent>
               </div>
             </Card>
@@ -103,17 +110,24 @@ export function ExperienceSection() {
                       <motion.div whileHover={{ rotate: 360 }} transition={{ duration: 0.5 }}>
                         <GraduationCap className="mr-2 h-5 w-5" />
                       </motion.div>
-                      Intellectual Head
+                      Intellectual Head | Maths Coordinator
                     </span>
                     <motion.div whileHover={{ scale: 1.1 }}>
                       <Badge variant="outline">3+ Years</Badge>
                     </motion.div>
                   </CardTitle>
-                  <CardDescription>Math and Physics Society</CardDescription>
+                  <CardDescription className="flex items-center gap-3">
+                    <img
+                      src="/math-physics-society-logo.png"
+                      alt="Math and Physics Society logo"
+                      className="h-12 w-16 shrink-0 rounded-md object-contain"
+                    />
+                    <span>Math and Physics Society</span>
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    Active participant in academic discussions, workshops, and research activities. Contributing to peer
+                    Organized Integration Bee competitions, Maths & Physics Olympiads. Active participant in academic discussions, workshops, and research activities. Contributing to peer
                     learning and knowledge sharing in mathematics and physics applications in engineering.
                   </p>
                 </CardContent>

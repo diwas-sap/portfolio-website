@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Send } from "lucide-react"
+import { Mail, MapPin, Phone, Send } from "lucide-react"
 import { sendEmail } from "@/lib/resend"
 import toast from "react-hot-toast"
 
@@ -49,6 +49,32 @@ console.log("Form submitted")
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
           <p className="text-muted-foreground">Have a question or want to work together?</p>
         </motion.div>
+
+        <div className="mb-10 grid gap-4 sm:grid-cols-3">
+          <div className="flex flex-col items-center gap-2 rounded-xl border bg-background/80 p-4 text-center">
+            <MapPin aria-hidden="true" className="h-5 w-5 text-primary" />
+            <span className="text-sm font-semibold">Location</span>
+            <span className="text-sm text-muted-foreground">Lalitpur, Nepal</span>
+          </div>
+          <a
+            href="mailto:078bce052.diwas@pcampus.edu.np"
+            className="flex flex-col items-center gap-2 rounded-xl border bg-background/80 p-4 text-center transition-colors hover:bg-accent"
+          >
+            <Mail aria-hidden="true" className="h-5 w-5 text-primary" />
+            <span className="text-sm font-semibold">Email</span>
+            <span className="break-all text-sm text-muted-foreground">
+              078bce052.diwas@pcampus.edu.np
+            </span>
+          </a>
+          <a
+            href="tel:+9779846482837"
+            className="flex flex-col items-center gap-2 rounded-xl border bg-background/80 p-4 text-center transition-colors hover:bg-accent"
+          >
+            <Phone aria-hidden="true" className="h-5 w-5 text-primary" />
+            <span className="text-sm font-semibold">Phone</span>
+            <span className="text-sm text-muted-foreground">+977 9846482837</span>
+          </a>
+        </div>
 
         <motion.form
           {...fadeInUp}
